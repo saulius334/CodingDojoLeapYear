@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use CodingDojoLeapYear\Services\CalculateLeapYear;
 use Generator;
 
 use PHPUnit\Framework\TestCase;
+
+use function PHPUnit\Framework\assertEquals;
 use function PHPUnit\Framework\assertTrue;
 
 class CalculateLeapYearTest extends TestCase
@@ -16,7 +19,8 @@ class CalculateLeapYearTest extends TestCase
     */
     public function testLeapYearCalculator($input, $expected): void
     {
-        assertTrue(true);
+        $this->calculator = new CalculateLeapYear();
+        assertEquals($expected,$this->calculator->calculate($input));
     }
     public function dataProvider(): Generator
     {
@@ -28,6 +32,5 @@ class CalculateLeapYearTest extends TestCase
         yield 'allYearsDivisibleBy4ButNotBy100AreLeapYears#2' => [2012, true];
         yield 'allYearsNotDivisibleBy4AreNotLeapYears' => [2017, false];
         yield 'allYearsNotDivisibleBy4AreNotLeapYears#2' => [2018, false];
-
     }
 }

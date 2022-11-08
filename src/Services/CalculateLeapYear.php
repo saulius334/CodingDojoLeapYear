@@ -8,6 +8,10 @@ final class CalculateLeapYear
 {
     public function calculate($input): bool
     {
-        return true;
+        if ($input % 400 === 0 || ($input % 4 === 0 && $input % 100 !== 0)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
