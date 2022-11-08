@@ -10,7 +10,6 @@ use Generator;
 use PHPUnit\Framework\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
-use function PHPUnit\Framework\assertTrue;
 
 class CalculateLeapYearTest extends TestCase
 {
